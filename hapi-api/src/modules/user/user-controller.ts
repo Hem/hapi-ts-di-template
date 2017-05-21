@@ -1,45 +1,30 @@
 import * as Hapi from 'hapi';
-import { IUserRepository } from "app-data-contracts";
+import { IUserRepository, User } from "app-data-contracts";
 import { UserRepository } from "app-data";
 import { injectable, inject } from 'inversify';
+import { apiMethod } from '../../core';
 
 
 
 @injectable()
 export class UserController {
-    
+
     @inject("IUserRepository")
     repository: IUserRepository;
 
-
     // POST: /api/users 
-    // { filter: text, } 
-    public findUsers( request: Hapi.Request, reply: any) {
-
-            const filter = request.payload.filter;
-            
-            this.repository.find( filter, 1, 20 )
-                .then( (value : any) => {
-                        reply( value );
-                })
-                .catch( ( err : Error ) => {
-                    reply(err);
-                });
-    }
-
+    // { filter: text } 
+    public findUsers = apiMethod(async request => {
+        const filter = request.payload.filter;
+        return await this.repository.find(filter, 1, 20);
+    });
 
     
-    // GET: /api/user/{id}
-    public getUserById (request:Hapi.Request, reply:any) {
-
+    // GET: /api/user/{id:number}
+    public getUserById = apiMethod(async request => {
         const id = parseInt(request.params.id, 10);
+        return this.repository.getById(id)
+    });
 
-        this.repository.getById(id)
-            .then((value) => {
-                    reply( value );
-            })
-            .catch((err) => {
-                reply(err);
-            });
-    }
+
 }

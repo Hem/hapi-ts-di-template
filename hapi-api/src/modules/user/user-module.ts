@@ -35,7 +35,6 @@ export class UserModule implements IAppModule {
             }
         });
 
-
         server.route({
             method: 'GET',
             path: '/api/user/{id}',
