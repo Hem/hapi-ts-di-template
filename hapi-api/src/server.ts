@@ -28,6 +28,14 @@ export class AppServer {
             }
         });
 
+        // we can access this on request stage...
+
+        this.server.app.di = container;
+
+        this.server.on('request-internal', (request, event, tags) => {
+            request.app.di = container;
+        })
+
         this.register();
     }
 
