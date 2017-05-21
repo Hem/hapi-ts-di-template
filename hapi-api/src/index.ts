@@ -10,15 +10,20 @@ import { PluginDiSetup } from './plugins/plugin-di-setup';
 import { RepositoryDiSetup, DbConfig } from 'app-data';
 import { IUserRepository } from 'app-data-contracts';
 
+
+
 const DEFAULT_DB_CONFIG = require('../config/database.json');
 
 
 const container = new Container();
 
-container.bind<Container>(Container).toConstantValue(container);
 
+
+container.bind<Container>(Container).toConstantValue(container);
 container.bind<DbConfig>( "DefaultDbConfig" ).toConstantValue( new DbConfig( DEFAULT_DB_CONFIG ) );
 container.bind<AppServer>( AppServer ).toSelf();
+
+
 // register types...
 new RepositoryDiSetup().setup(container);
 new PluginDiSetup().setup(container);

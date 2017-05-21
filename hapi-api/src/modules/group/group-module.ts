@@ -24,7 +24,7 @@ export class GroupModule implements IAppModule {
                 method: 'POST',
                 path: '/api/groups',
                 config: {
-                    handler: this.controller.getAllGroups,
+                    handler: this.controller.findGroups,
                     description: "Lists all groups",
                     tags: ['api', 'groups'],
                     validate: {

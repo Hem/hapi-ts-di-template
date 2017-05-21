@@ -1,3 +1,4 @@
+import { apiMethod } from '../../core';
 import * as hapi from 'hapi';
 import { request } from 'https';
 import { GroupRepository } from 'app-data';
@@ -12,31 +13,19 @@ export class GroupController {
     repository:IGroupRepository;
 
 
-    getAllGroups (request: hapi.Request, reply: any) {
-        
+    // POST: /api/users 
+    // { filter: text } 
+    public findGroups = apiMethod(async request => {
         const filter = request.payload.filter;
+        return await this.repository.find(filter, 1, 20);
+    });
 
-        this.repository
-            .find(filter, 1, 20)
-                .then((records) => {
-                        reply(records); 
-                    })
-                    .catch((err:Error) => { 
-                        reply(err);
-                     });
-    }
+    
+    // GET: /api/user/{id:number}
+    public getGroupById = apiMethod(async request => {
+        const id = parseInt(request.params.id, 10);
+        return this.repository.getById(id)
+    });
 
-    getGroupById ( request: hapi.Request, reply: any ) {
-        
-        var id = parseInt(request.params.id);
 
-        this.repository
-                .getById(id)
-                    .then((records) => {
-                        reply(records); 
-                    })
-                    .catch((err:Error) => { 
-                        reply(err);
-                     });
-    }
 }
