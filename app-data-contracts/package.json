@@ -1,0 +1,9 @@
+{
+  "name": "app-data-contracts",
+  "version": "1.0.0",
+  "description": "Data contract definitions",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Hem Talreja",
+  "license": "ISC"
+}

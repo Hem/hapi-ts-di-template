@@ -1,0 +1,5 @@
+{
+    "dbType": "sqlite3",
+    "dbName": "app-db.sqlite",
+    "maxConnection": 5
+}

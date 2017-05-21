@@ -1,0 +1,41 @@
+{
+  "name": "hapi-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "preinstall": "rm-local-modules",
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-data": "file:../app-data",
+    "app-data-contracts": "file:../app-data-contracts",
+    "good": "^7.2.0",
+    "good-console": "^6.4.0",
+    "hapi": "^16.1.1",
+    "hapi-swagger": "^7.7.0",
+    "inert": "^4.2.0",
+    "inversify": "^4.1.0",
+    "joi": "^10.5.0",
+    "knex": "^0.13.0",
+    "reflect-metadata": "^0.1.10",
+    "sqlite3": "^3.1.8",
+    "swagger": "^0.7.5",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/hapi": "^16.1.2",
+    "@types/joi": "^10.3.2",
+    "@types/knex": "0.0.50",
+    "@types/node": "^7.0.21",
+    "mocha": "^3.4.1",
+    "mocha-typescript": "^1.1.4",
+    "rm-local-modules": "0.0.2",
+    "ts-node": "^3.0.4",
+    "types": "^0.1.1"
+  }
+}
