@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 
+require('dotenv').config({ path:'./config/.env'});
+
 import * as Hapi from 'hapi';
 import * as Server from './server';
 import { Container } from "inversify";
@@ -9,6 +11,7 @@ import { ModuleDiSetup } from './modules/module-di-setup';
 import { PluginDiSetup } from './plugins/plugin-di-setup';
 import { RepositoryDiSetup, DbConfig } from 'app-data';
 import { IUserRepository } from 'app-data-contracts';
+
 
 
 
