@@ -9,11 +9,9 @@ export class AppServer {
 
     private server: Hapi.Server;
 
-    private pluginsToLoad:string[] = ['swagger'];
+    private pluginsToLoad:string[] = ['logger', 'swagger', 'jwt'];
 
-    private modulesToLoad:string[] = ['user', 'group'];
-
-
+    private modulesToLoad:string[] = ['user', 'group', 'auth'];
 
     constructor( @inject(Container) private container:Container  ) {
 
@@ -29,7 +27,6 @@ export class AppServer {
         });
 
         // we can access this on request stage...
-
         this.server.app.di = container;
 
         this.server.on('request-internal', (request, event, tags) => {
@@ -57,16 +54,19 @@ export class AppServer {
 
     private registerPlugins():void {
 
-        this.pluginsToLoad.forEach((pluginName: string) => {
+        this.pluginsToLoad.forEach( async (pluginName: string) => {
                 
                 let plugin:IPlugin = this.container.get<IPlugin>(pluginName);
                 
                     console.log(`Registering Plugin ${plugin.info().name} v${plugin.info().version}`);
 
-                    plugin.register(this.server);
+                    await plugin.register(this.server).catch((reason) => {
+                        console.error(reason);
+                        throw reason;
+                    });
+
 
         });
-
     }
 
     private registerModules():void {

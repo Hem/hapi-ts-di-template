@@ -1,3 +1,5 @@
+import { JwtPlugin } from './jwt';
+import { LoggerPlugin } from './logger';
 import { Container } from "inversify";
 import { SwaggerPlugin } from './swagger';
 import { IPlugin } from '../core';
@@ -5,6 +7,10 @@ import { IPlugin } from '../core';
 
 export class PluginDiSetup {    
     setup( container: Container): void {
+
+        container.bind<IPlugin>("jwt").to(JwtPlugin);
+        container.bind<IPlugin>("logger").to(LoggerPlugin);
         container.bind<IPlugin>("swagger").to(SwaggerPlugin);
+        
     }
 }

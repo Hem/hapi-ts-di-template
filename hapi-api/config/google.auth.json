@@ -1,0 +1,15 @@
+{
+  "REDIRECT_URL": '/api/auth/google', 
+  "handler" : require('./google_oauth_handler.js'), 
+  "config" : {  
+    "description": 'Google auth callback',
+    "notes": "Handled by hapi-auth-google plugin",
+    "tags": ['api', 'auth', 'plugin']
+  },
+  "access_type": 'online',
+  "approval_prompt": 'auto', 
+  "scope": "https://www.googleapis.com/auth/plus.profile.emails.read",
+  "BASE_URL": process.env.BASE_URL,
+  "GOOGLE_CLIENT_ID": process.env.GOOGLE_CLIENT_ID,
+  "GOOGLE_CLIENT_SECRET": process.env.GOOGLE_CLIENT_SECRET
+};

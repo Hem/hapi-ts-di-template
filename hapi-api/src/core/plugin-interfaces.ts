@@ -11,7 +11,7 @@ export interface IPluginInfo {
 
 export interface IPlugin {
 
-    register(server: Hapi.Server):void;
+    register(server: Hapi.Server):Promise<boolean>;
 
     info(): IPluginInfo;
 }

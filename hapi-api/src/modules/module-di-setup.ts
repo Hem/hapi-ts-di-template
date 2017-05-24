@@ -1,3 +1,5 @@
+import { AuthController } from './auth/auth-controller';
+import { AuthModule } from './auth/auth-module';
 import { GroupController } from './group/group-controller';
 import { UserController } from './user/user-controller';
 import { Container } from "inversify";
@@ -9,11 +11,13 @@ import { UserModule } from "./user/user-module";
 export class ModuleDiSetup {    
     setup( container: Container): void {
 
-        container.bind<GroupController>(GroupController).toSelf();
-        container.bind<UserController>(UserController).toSelf()
-
         container.bind<IAppModule>("group").to(GroupModule);
-        container.bind<IAppModule>("user").to(UserModule);
+        container.bind<GroupController>(GroupController).toSelf();
 
+        container.bind<IAppModule>("user").to(UserModule);
+        container.bind<UserController>(UserController).toSelf();
+
+        container.bind<IAppModule>("auth").to(AuthModule);
+        container.bind<AuthController>(AuthController).toSelf();
     }
 }
