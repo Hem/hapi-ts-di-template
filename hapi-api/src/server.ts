@@ -9,7 +9,7 @@ export class AppServer {
 
     private server: Hapi.Server;
 
-    private pluginsToLoad:string[] = ['logger', 'swagger', 'jwt'];
+    private pluginsToLoad:string[] = ['logger', 'swagger', 'jwt', 'googleAuth'];
 
     private modulesToLoad:string[] = ['user', 'group', 'auth'];
 

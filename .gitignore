@@ -1,3 +1,7 @@
 **/node_modules/
 **/dist/
 
+*.enc
+
+hapi-api/config/*.enc
+hapi-api/config/.env
