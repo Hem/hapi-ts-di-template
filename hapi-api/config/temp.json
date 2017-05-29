@@ -1,0 +1,16 @@
+{
+    "web": {
+        "client_id": "904007451416-o74i3d29c7ju40a30jgtrqpohaatki1d.apps.googleusercontent.com",
+        "project_id": "aventureus-168323",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "zrHe8kz61jwAguI2ChGZLTbP",
+        "redirect_uris": [
+            "http://localhost:8080/google-auth"
+        ],
+        "javascript_origins": [
+            "http://localhost:8080"
+        ]
+    }
+}

@@ -19,5 +19,6 @@ export class ModuleDiSetup {
 
         container.bind<IAppModule>("auth").to(AuthModule);
         container.bind<AuthController>(AuthController).toSelf();
+
     }
 }
