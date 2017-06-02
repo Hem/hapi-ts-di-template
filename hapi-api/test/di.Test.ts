@@ -1,11 +1,10 @@
 import 'reflect-metadata';
 
-import { RepositoryDiSetup } from '../src/repository-di-setup';
-import { GroupRepository, DbConfig } from '../src';
+import { GroupRepository, DbConfig, RepositoryDiSetup } from '../src/data';
 import { suite, test, slow, timeout, skip, only } from "mocha-typescript";
 import { expect } from 'chai';
 import { Container } from "inversify";
-import { IUserRepository } from "app-data-contracts";
+import { IUserRepository } from "../src/data-contracts";
 
 const DEFAULT_DB_CONFIG = require('./db/config.json');
 

@@ -1,11 +1,11 @@
-import { Container } from "inversify";
-import { IGroupRepository, IUserRepository } from "app-data-contracts";
+import { IGroupRepository, IUserRepository } from "../data-contracts";
 import { GroupRepository, UserRepository } from './';
+import { interfaces } from "inversify";
 
 
 
 export class RepositoryDiSetup {    
-    setup( container: Container): void {
+    public setup( container : interfaces.Container ): void {
         container.bind<IUserRepository>("IUserRepository").to(UserRepository);
         container.bind<IGroupRepository>("IGroupRepository").to(GroupRepository);
     }

@@ -42,7 +42,7 @@ export class JwtPlugin implements IPlugin {
                     verifyOptions: { "algorithms": ['HS256'] }
                 })
 
-                server.auth.default('jwt');
+                // server.auth.default('jwt');
 
                 resolve(true);
             });

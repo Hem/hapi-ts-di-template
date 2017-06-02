@@ -1,8 +1,8 @@
 import { apiMethod } from '../../core';
 import * as hapi from 'hapi';
 import { request } from 'https';
-import { GroupRepository } from 'app-data';
-import { IGroupRepository } from 'app-data-contracts';
+import { GroupRepository } from '../../data';
+import { IGroupRepository } from '../../data-contracts';
 import { injectable, inject } from 'inversify';
 
 

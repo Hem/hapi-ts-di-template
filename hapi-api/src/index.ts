@@ -4,33 +4,31 @@ require('dotenv').config({ path:'./config/.env'});
 
 import * as Hapi from 'hapi';
 import * as Server from './server';
-import { Container } from "inversify";
+import { Container, interfaces } from "inversify";
 
 import { AppServer } from './server';
 import { ModuleDiSetup } from './modules/module-di-setup';
 import { PluginDiSetup } from './plugins/plugin-di-setup';
-import { RepositoryDiSetup, DbConfig } from 'app-data';
-import { IUserRepository } from 'app-data-contracts';
-
-
+import { RepositoryDiSetup, DbConfig } from './data/';
+import { IUserRepository } from './data-contracts';
 
 
 const DEFAULT_DB_CONFIG = require('../config/database.json');
 
 
-const container = new Container();
+const container:interfaces.Container = new Container();
 
 
 
-container.bind<Container>(Container).toConstantValue(container);
+container.bind<interfaces.Container>("ioc").toConstantValue(container);
 container.bind<DbConfig>( "DefaultDbConfig" ).toConstantValue( new DbConfig( DEFAULT_DB_CONFIG ) );
 container.bind<AppServer>( AppServer ).toSelf();
 
 
 // register types...
-new RepositoryDiSetup().setup(container);
 new PluginDiSetup().setup(container);
 new ModuleDiSetup().setup(container); 
+new RepositoryDiSetup().setup(container);
 
 
 

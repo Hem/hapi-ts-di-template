@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { suite, test, slow, timeout, skip, only } from "mocha-typescript";
 import { expect } from 'chai';
-import { DbConfig, GroupRepository } from '../src';
+import { DbConfig, GroupRepository } from '../../src/data';
 
-const DEFAULT_DB_CONFIG = require('./db/config.json');
+const DEFAULT_DB_CONFIG = require('../db/config.json');
 
 @suite class GroupRepositoryTest {
 

@@ -2,7 +2,7 @@ import { register } from 'ts-node/dist';
 import * as path from 'path';
 import * as Hapi from 'hapi';
 import { IAppModule, IPlugin, IPluginInfo } from './core';
-import { Container, injectable, inject } from 'inversify';
+import { interfaces, injectable, inject } from 'inversify';
 
 @injectable()
 export class AppServer {
@@ -13,7 +13,7 @@ export class AppServer {
 
     private modulesToLoad:string[] = ['user', 'group', 'auth'];
 
-    constructor( @inject(Container) private container:Container  ) {
+    constructor( @inject("ioc") private container: interfaces.Container  ) {
 
         this.server = new Hapi.Server();
 

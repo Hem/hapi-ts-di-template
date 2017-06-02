@@ -1,5 +1,5 @@
 import { AbstractRepository } from '../abstract-repository';
-import { IUserRepository, User } from 'app-data-contracts';
+import { IUserRepository, User } from '../../data-contracts';
 import { injectable } from "inversify";
 
 

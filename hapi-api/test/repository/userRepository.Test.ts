@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 
-import { IUserRepository } from 'app-data-contracts';
 import { suite, test, slow, timeout, skip, only } from "mocha-typescript";
 import { expect } from 'chai';
-import { DbConfig, UserRepository } from "../src";
+import { DbConfig, UserRepository } from "../../src/data";
+import { IUserRepository } from '../../src/data-contracts';
 
-const DEFAULT_DB_CONFIG = require('./db/config.json');
+const DEFAULT_DB_CONFIG = require('../db/config.json');
 
 
 
