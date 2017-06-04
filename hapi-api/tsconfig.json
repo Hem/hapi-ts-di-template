@@ -12,7 +12,12 @@
     
     "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */   
-    "strict": true                         /* Enable all strict type-checking options. */    
+    "strict": true,                         /* Enable all strict type-checking options. */    
+    "baseUrl": ".",
+    "paths": {
+      "@myorg/app-data-contracts": ["../app-data-contracts"],
+      "@myorg/app-data": ["../app-data"]
+    }
   }, 
   "include": [
     "src/**/*.ts"

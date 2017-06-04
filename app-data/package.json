@@ -1,18 +1,17 @@
 {
-  "name": "app-data",
+  "name": "@myorg/app-data",
   "version": "1.0.0",
   "description": "Contains the repository implementation for application data",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "preinstall": "rm-local-modules",
     "test": "tsc && mocha -r ts-node/register test/**/*.ts"
   },
   "keywords": [],
   "author": "Hem Talreja",
   "license": "ISC",
   "dependencies": {
-    "app-data-contracts": "file:../app-data-contracts",
+    "@myorg/app-data-contracts": "file:../app-data-contracts",
     "inversify": "^4.1.0",
     "knex": "^0.13.0",
     "reflect-metadata": "^0.1.10",
@@ -21,7 +20,6 @@
   },
   "devDependencies": {
     "@types/chai": "^3.5.2",
-    "@types/inversify": "^2.0.33",
     "@types/knex": "0.0.50",
     "@types/mocha": "^2.2.41",
     "chai": "^3.5.0",

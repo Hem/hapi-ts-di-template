@@ -1,5 +1,5 @@
 {
-  "name": "app-data-contracts",
+  "name": "@myorg/app-data-contracts",
   "version": "1.0.0",
   "description": "Data contract definitions",
   "main": "./dist/index.js",

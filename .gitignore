@@ -5,3 +5,5 @@
 
 hapi-api/config/*.enc
 hapi-api/config/.env
+
+**/package-lock.json

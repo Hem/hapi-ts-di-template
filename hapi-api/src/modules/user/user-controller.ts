@@ -1,6 +1,6 @@
 import * as Hapi from 'hapi';
-import { IUserRepository, User } from "app-data-contracts";
-import { UserRepository } from "app-data";
+import { IUserRepository, User } from "@myorg/app-data-contracts";
+import { UserRepository } from "@myorg/app-data";
 import { injectable, inject } from 'inversify';
 import { apiMethod } from '../../core';
 

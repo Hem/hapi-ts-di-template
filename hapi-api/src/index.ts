@@ -9,8 +9,8 @@ import { Container } from "inversify";
 import { AppServer } from './server';
 import { ModuleDiSetup } from './modules/module-di-setup';
 import { PluginDiSetup } from './plugins/plugin-di-setup';
-import { RepositoryDiSetup, DbConfig } from 'app-data';
-import { IUserRepository } from 'app-data-contracts';
+import { RepositoryDiSetup, DbConfig } from '@myorg/app-data';
+import { IUserRepository } from '@myorg/app-data-contracts';
 
 
 
