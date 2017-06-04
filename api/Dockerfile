@@ -2,14 +2,14 @@ FROM node:8
 
 MAINTAINER Hem Talreja <HemTalreja@gmail.com>
 
-RUN npm install -g typescript pm2
+RUN npm install -g typescript pm2 
 
 # Create the directory.
 RUN mkdir /usr/app/ && mkdir /usr/app/app-data && mkdir /usr/app/app-data-contracts && mkdir /usr/app/hapi-api
 
 # copy package.json over so we can install files...
-COPY ./app-data/package.json /usr/app/app-data/
 COPY ./app-data-contracts/package.json /usr/app/app-data-contracts/
+COPY ./app-data/package.json /usr/app/app-data/
 COPY ./hapi-api/package.json /usr/app/hapi-api/
 
 # set working dir
