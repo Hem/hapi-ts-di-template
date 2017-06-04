@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { IUserRepository } from 'app-data-contracts';
+import { IUserRepository } from '@myorg/app-data-contracts';
 import { suite, test, slow, timeout, skip, only } from "mocha-typescript";
 import { expect } from 'chai';
 import { DbConfig, UserRepository } from "../src";

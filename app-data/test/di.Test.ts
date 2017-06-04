@@ -5,7 +5,7 @@ import { GroupRepository, DbConfig } from '../src';
 import { suite, test, slow, timeout, skip, only } from "mocha-typescript";
 import { expect } from 'chai';
 import { Container } from "inversify";
-import { IUserRepository } from "app-data-contracts";
+import { IUserRepository } from "@myorg/app-data-contracts";
 
 const DEFAULT_DB_CONFIG = require('./db/config.json');
 

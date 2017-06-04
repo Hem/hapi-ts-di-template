@@ -1,4 +1,4 @@
-import { IGroupRepository, Group } from 'app-data-contracts';
+import { IGroupRepository, Group } from '@myorg/app-data-contracts';
 import { AbstractRepository } from '../abstract-repository';
 
 export class GroupRepository extends AbstractRepository implements IGroupRepository {
